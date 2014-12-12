@@ -1,13 +1,15 @@
+var config = require('./../config.json');
 var Hapi = require('hapi');
 
+
 var server = new Hapi.Server();
-server.connection({ port: 3335 });
+server.connection({ port: config.httpServPort });
 
 server.route({
     method:'GET',
     path:'/',
     handler: function(request,reply) {
-        reply.file(__dirname + '/public/index.html');
+            reply.file(__dirname + '/public/index.html');
     }
 });
 

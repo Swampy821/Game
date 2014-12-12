@@ -1,0 +1,33 @@
+{
+  "httpServPort":3000,
+  "chatServPort":3001,
+  "gameServPort":3002,
+  "debug":true,
+  "jsFiles":[
+    "./http-dev/js/resources/jquery-2.1.1.min.js",
+    "./http-dev/js/resources/socket.io.js",
+    "./http-dev/js/chat/chat.js",
+    "./http-dev/js/script2.js",
+    "./http-dev/js/script.js"
+  ],
+  "lessFiles":[
+    "./http-dev/less/*.less",
+    "./http-dev/less/**/*.less"
+  ],
+  "watchFiles":[
+    "./http-dev/html/*.*",
+    "./http-dev/html/**/*.*",
+    "./http-dev/js/*.*",
+    "./http-dev/js/**/*.*",
+    "./http-dev/less/*.*",
+    "./http-dev/less/**/*.*"
+  ],
+  "htmlFiles":
+    {
+      "index.html": [
+        "./http-dev/html/head.html",
+        "./http-dev/html/index.html",
+        "./http-dev/html/foot.html"
+      ]
+    }
+}

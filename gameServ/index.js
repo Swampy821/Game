@@ -1,7 +1,8 @@
+var config = require('./../config.json');
 var Hapi = require('hapi');
 
 var server = new Hapi.Server();
-server.connection({ port: 3334 });
+server.connection({ port: config.gameServPort });
 
 server.route({
     method:'GET',
