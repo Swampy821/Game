@@ -2,10 +2,13 @@
   "httpServPort":3000,
   "chatServPort":3001,
   "gameServPort":3002,
-  "debug":true,
+  "debug":false,
   "jsFiles":[
     "./http-dev/js/resources/jquery-2.1.1.min.js",
     "./http-dev/js/resources/socket.io.js",
+    "./http-dev/js/Globals/sockets.js",
+    "./http-dev/js/Globals/Globals.js",
+    "./http-dev/js/Globals/binding.js",
     "./http-dev/js/chat/chat.js",
     "./http-dev/js/script2.js",
     "./http-dev/js/script.js"
@@ -26,6 +29,8 @@
     {
       "index.html": [
         "./http-dev/html/head.html",
+        "./http-dev/html/nickname.html",
+        "./http-dev/html/chat/chat.html",
         "./http-dev/html/index.html",
         "./http-dev/html/foot.html"
       ]

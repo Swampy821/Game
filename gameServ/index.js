@@ -1,17 +1,22 @@
 var config = require('./../config.json');
-var Hapi = require('hapi');
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var Events = require('./modules/events.js');
+var globals = require('./globals/globals.js');
 
-var server = new Hapi.Server();
-server.connection({ port: config.gameServPort });
+globals.setConfig(config);
 
-server.route({
-    method:'GET',
-    path:'/',
-    handler: function(request,reply) {
-        reply('Game Server Running');
+io.on('connection', function(socket) {
+    if(config.debug) {
+        console.log(socket.id + ' connected to gameServ');
     }
+    new Events(io, socket, globals);
 });
 
-server.start(function () {
-    console.log('Game Server running at:', server.info.uri);
+
+http.listen(config.gameServPort, function(){
+    console.log('Game Server running on port ' + config.gameServPort);
 });
+
+

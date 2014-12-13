@@ -18,7 +18,7 @@ gulp.task('watch', function() {
 gulp.task('scripts', function() {
     gulp.src(config.jsFiles)
         .pipe(concat('bundle.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('httpServ/public/js'))
 });
 
